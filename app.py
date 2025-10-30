@@ -35,13 +35,13 @@ def jaccard_similarity(text1, text2):
 
 st.set_page_config(page_title="Jaccard Similarity NLP", page_icon="📄", layout="centered")
 
-st.title("📄 NLP Project: Jaccard Similarity Between PDFs")
+st.title(" NLP Project: Jaccard Similarity Between PDFs")
 st.write("Upload **4 PDF files** to check similarity between them using Jaccard Similarity.")
 
 uploaded_files = st.file_uploader("Upload 4 PDF Files", type=["pdf"], accept_multiple_files=True)
 
 if len(uploaded_files) == 4:
-    st.success("✅ All 4 PDFs uploaded successfully!")
+    st.success(" All 4 PDFs uploaded successfully!")
 
     # Extract and clean text
     texts = []
@@ -66,20 +66,21 @@ if len(uploaded_files) == 4:
                       index=[f"PDF {i+1}" for i in range(4)],
                       columns=[f"PDF {i+1}" for i in range(4)])
 
-    st.subheader("📊 Similarity Matrix")
+    st.subheader(" Similarity Matrix")
     st.dataframe(df.style.format("{:.3f}"))
 
     # Plot heatmap
-    st.subheader("🔥 Heatmap of Jaccard Similarity")
+    st.subheader(" Heatmap of Jaccard Similarity")
     fig, ax = plt.subplots(figsize=(7, 5))
     sns.heatmap(df, annot=True, cmap="YlGnBu", fmt=".3f", linewidths=0.5, ax=ax)
     st.pyplot(fig)
 
     # Save result with joblib
     joblib.dump(df, "Jaccard_Similarity_Results.pkl")
-    st.success("✅ Results saved as `Jaccard_Similarity_Results.pkl`")
+    st.success(" Results saved as `Jaccard_Similarity_Results.pkl`")
 
     
 
 st.caption("Developed by Sehrish Tariq 💻")
+
 
