@@ -44,7 +44,7 @@ st.write("Upload **4 PDF files** to check their similarity using the Jaccard Sim
 uploaded_files = st.file_uploader("📂 Upload 4 PDF Files", type=["pdf"], accept_multiple_files=True)
 
 if uploaded_files and len(uploaded_files) == 4:
-    st.success("✅ All 4 PDFs uploaded successfully!")
+    st.success(" All 4 PDFs uploaded successfully!")
 
     texts = []
     for file in uploaded_files:
@@ -80,11 +80,11 @@ if uploaded_files and len(uploaded_files) == 4:
     df_rounded = df.round(3)
 
     # Show results
-    st.subheader("📊 Similarity Matrix (Jaccard Index)")
+    st.subheader("Similarity Matrix (Jaccard Index)")
     st.table(df_rounded)
 
     # Heatmap
-    st.subheader("🔥 Heatmap of Jaccard Similarity")
+    st.subheader("Heatmap of Jaccard Similarity")
     fig, ax = plt.subplots(figsize=(7, 5))
     sns.heatmap(df, annot=True, cmap="YlGnBu", fmt=".3f", linewidths=0.5, ax=ax)
     st.pyplot(fig)
@@ -102,3 +102,4 @@ else:
     st.info("Please upload **exactly 4 PDF files** to start the similarity check.")
 
 st.caption("Developed by Sehrish Tariq 💻")
+
