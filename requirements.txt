@@ -6,3 +6,4 @@ PyPDF2
 spacy
 streamlit
 joblib
+pdfplumber
