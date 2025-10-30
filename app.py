@@ -79,11 +79,7 @@ if len(uploaded_files) == 4:
     joblib.dump(df, "Jaccard_Similarity_Results.pkl")
     st.success("✅ Results saved as `Jaccard_Similarity_Results.pkl`")
 
-    # Download option
-    with open("Jaccard_Similarity_Results.pkl", "rb") as f:
-        st.download_button("⬇️ Download Result File", f, file_name="Jaccard_Similarity_Results.pkl")
-
-else:
-    st.info("Please upload exactly 4 PDF files to proceed.")
+    
 
 st.caption("Developed by Sehrish Tariq 💻")
+
